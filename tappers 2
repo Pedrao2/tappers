@@ -1,0 +1,377 @@
+if game:GetService("CoreGui"):FindFirstChild("FluxLib") then
+    game:GetService("CoreGui"):FindFirstChild("FluxLib"):Destroy()
+end
+local Flux = loadstring(game:HttpGet"https://raw.githubusercontent.com/LuciferNzqxz/BAMBYZ/main/LxifLib")()
+local win = Flux:Window("Anime Tappers", "", Color3.fromRGB(255,0,0), Enum.KeyCode.RightControl)
+local tab = win:Tab("Main", "http://www.roblox.com/asset/?id=6023426915")
+tab:Button("Credit: Thziin YT#2105", "Thziin YT#2105", function()
+Flux:Notification("Make By Thziin  YT", "Done")
+end)
+tab:Label("Discord Server :  ")
+tab:Button("Nao tenho Discord", "Nao tenho Discord", function()
+setclipboard("Nao Tenho Discord")
+end)
+tab:Line()
+local AutoFarm = win:Tab("Auto Farm", "http://www.roblox.com/asset/?id=6022668888")
+AutoFarm:Toggle("Auto Click", "",false, function(State)
+_G.Autotap = State
+  while _G.Autotap do wait()
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.Tap
+Event:FireServer()
+wait(.1)
+end
+end)
+AutoFarm:Toggle("Auto Combo", "",false, function(State)
+_G.Autotap = State
+  while _G.Autotap do wait()
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.UpdateCombo
+Event:FireServer()
+wait(.1)
+end
+end)
+AutoFarm:Toggle("Auto Super Click", "",false, function(State)
+_G.Autotap = State
+  while _G.Autotap do wait()
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.UseSuperTap
+Event:FireServer()
+wait(.1)
+end
+end)
+AutoFarm:Dropdown("Select Rebirth", {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30}, function(String)
+  Select = String
+end)
+AutoFarm:Toggle("Auto Rebirth", "",false, function(State)
+_G.autore = State
+while _G.autore do wait()
+local A_1 = 17
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.Rebirth
+Event:FireServer(A_1)
+wait(.1)
+end
+end)
+local Auto = win:Tab("Auto Yen", "http://www.roblox.com/asset/?id=6022668888")
+Worlds = {}
+
+for i,v in pairs(game:GetService("Workspace").Worlds:GetChildren()) do
+     table.insert(Worlds,v.Name)
+end
+
+Auto:Dropdown("Select Worlds", Worlds, function(String)
+    Word = String
+end)
+Auto:Toggle("Auto Yen", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+    for i,v in pairs(game:GetService("Workspace").Worlds[Word].Yen:GetDescendants()) do
+        if v.Name == "TouchInterest" then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+wait(.1)
+        end
+        end
+end
+end)
+local Auto = win:Tab("Teleport Player", "http://www.roblox.com/asset/?id=6022668888")
+players = {}
+
+for i,v in pairs(game:GetService("Players"):GetChildren()) do
+     table.insert(players,v.Name)
+end
+
+Auto:Dropdown("Select Player", players, function(String)
+    Select1 = String
+end)
+Auto:Button("Teleport","", function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Select1].Character.HumanoidRootPart.CFrame
+end)
+local Auto = win:Tab("Teleport Worlds", "http://www.roblox.com/asset/?id=6022668888")
+Auto:Button("Starter World","", function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-14.1986799, 3.99999976, -60.3502426, 0.968910038, -4.08568255e-08, -0.247413337, 6.10281603e-08, 1, 7.38601003e-08, 0.247413337, -8.66629719e-08, 0.968910038)
+end)
+Auto:Button("Demon Slayer","", function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1541.17847, 114.321709, 904.158997, 0.799022973, 9.74186847e-08, -0.601300478, -4.10957526e-08, 1, 1.07404261e-07, 0.601300478, -6.11075777e-08, 0.799022973)
+end)
+Auto:Button("One Piece","", function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(608.651001, 78.6308517, 1439.54883, -0.981466174, 3.81915441e-08, -0.19163543, 4.79321685e-08, 1, -4.61932217e-08, 0.19163543, -5.45225873e-08, -0.981466174)
+end)
+Auto:Button("Naruto","", function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(201.80658, 112.436737, 3791.1936, -0.350210488, 8.80191351e-08, 0.936671019, 5.61229747e-08, 1, -7.29864311e-08, -0.936671019, 2.70081504e-08, -0.350210488)
+end)
+Auto:Button("JoJo Bizarre","", function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-674.209839, 74.2833176, 2081.80127, 1, -4.13478896e-09, -2.38308098e-13, 4.13478896e-09, 1, 2.94682145e-09, 2.38295901e-13, -2.94682145e-09, 1)
+end)
+Auto:Button("Attack On Titan","", function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1239.11975, 79.7714539, 659.294434, -0.807135046, 3.05046051e-08, -0.59036684, -5.32766808e-09, 1, 5.89544484e-08, 0.59036684, 5.07294828e-08, -0.807135046)
+end)
+Auto:Button("Tokyo Ghoul","", function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1783.78699, 118.046341, 1828.33667, 1, 7.31057952e-08, -2.33308144e-14, -7.31057952e-08, 1, -6.23111234e-08, 1.87755102e-14, 6.23111234e-08, 1)
+end)
+Auto:Button("Sword Art Online","", function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1705.1853, 262.190002, -2522.32251, 1, 1.0200035e-07, -1.74009451e-14, -1.0200035e-07, 1, -5.69385428e-08, 1.15931943e-14, 5.69385428e-08, 1)
+end)
+Auto:Button("My Hero Academy","", function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4586.2334, 131.29982, -2477.49487, -0.0697419271, -4.78400208e-09, -0.997565091, -1.02954303e-07, 1, 2.40207831e-09, 0.997565091, 1.02871141e-07, -0.0697419271)
+end)
+Auto:Button("Jujutsu Kaisen","", function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-950.339661, 10.3745098, -4292.5459, 0.999050498, -6.65478979e-08, -0.0435671136, 6.46567884e-08, 1, -4.48158382e-08, 0.0435671136, 4.19563762e-08, 0.999050498)
+end)
+Auto:Button("Goblin Slayer","", function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2194.38428, 27.9999638, 1061.68481, 0.0261165444, 1.30671274e-09, 0.999658883, -2.63537565e-08, 1, -6.18654683e-10, -0.999658883, -2.63286086e-08, 0.0261165444)
+end)
+Auto:Button("Black Clover","", function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1321.88525, -10.2048349, 73.7773895, 1, 2.27007959e-08, 4.78224909e-14, -2.27007959e-08, 1, 5.80189674e-09, -4.76907806e-14, -5.80189674e-09, 1)
+end)
+Auto:Button("Predator X","", function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2054.17651, -59.8136482, 5042.93018, -0.00860993192, 3.74543996e-09, -0.999962926, 1.62928993e-09, 1, 3.73155018e-09, 0.999962926, -1.59710123e-09, -0.00860993192)
+end)
+local Auto = win:Tab("Auto Upgrades", "http://www.roblox.com/asset/?id=6022668888")
+Auto:Toggle("Buy Taps", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "Taps"
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade
+Event:FireServer(A_1)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Speed", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "Speed"
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade
+Event:FireServer(A_1)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Yen", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "Yen"
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade
+Event:FireServer(A_1)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Hatch Speed", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "Hatch Speed"
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade
+Event:FireServer(A_1)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Luck", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "Luck"
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade
+Event:FireServer(A_1)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Vault", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "Vault"
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.RequestUpgrade
+Event:FireServer(A_1)
+wait(.1)
+end
+end)
+local Auto = win:Tab("Auto Buy Egg", "http://www.roblox.com/asset/?id=6022668888")
+Auto:Button("Starter World Eggs", "",false, function(State)
+end)
+Auto:Toggle("Buy My Hero Academia Egg", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "My Hero Academia Egg"
+local A_2 = 1
+local A_3 = true
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.PurchaseEgg
+Event:FireServer(A_1, A_2, A_3)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Sao Egg", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "Sao Egg"
+local A_2 = 1
+local A_3 = true
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.PurchaseEgg
+Event:FireServer(A_1, A_2, A_3)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Jojo Egg", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "JoJo Egg"
+local A_2 = 1
+local A_3 = true
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.PurchaseEgg
+Event:FireServer(A_1, A_2, A_3)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Dragon Ball Egg", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "Dragon Ball Egg"
+local A_2 = 1
+local A_3 = true
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.PurchaseEgg
+Event:FireServer(A_1, A_2, A_3)
+wait(.1)
+end
+end)
+Auto:Line()
+Auto:Toggle("Buy Demon Slayer Egg", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "Demon Slayer Egg"
+local A_2 = 1
+local A_3 = true
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.PurchaseEgg
+Event:FireServer(A_1, A_2, A_3)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy One Piece Egg", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "One Piece Egg"
+local A_2 = 1
+local A_3 = true
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.PurchaseEgg
+Event:FireServer(A_1, A_2, A_3)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Naruto Egg", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "Naruto Egg"
+local A_2 = 1
+local A_3 = true
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.PurchaseEgg
+Event:FireServer(A_1, A_2, A_3)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Jojo Stand Egg", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "JoJo Stand Egg"
+local A_2 = 1
+local A_3 = true
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.PurchaseEgg
+Event:FireServer(A_1, A_2, A_3)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Attack On Titan Egg", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "Attack On Titan Egg"
+local A_2 = 1
+local A_3 = true
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.PurchaseEgg
+Event:FireServer(A_1, A_2, A_3)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Tokyo Ghoul Egg", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "Tokyo Ghoul Egg"
+local A_2 = 1
+local A_3 = true
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.PurchaseEgg
+Event:FireServer(A_1, A_2, A_3)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Sword Art Online Egg", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "Sao Ultra Egg"
+local A_2 = 1
+local A_3 = true
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.PurchaseEgg
+Event:FireServer(A_1, A_2, A_3)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy My Hero Academy Egg", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "My Hero Academia Heros Egg"
+local A_2 = 1
+local A_3 = true
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.PurchaseEgg
+Event:FireServer(A_1, A_2, A_3)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Jujutsu Kaisen Egg", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "Jujutsu Egg"
+local A_2 = 1
+local A_3 = true
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.PurchaseEgg
+Event:FireServer(A_1, A_2, A_3)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Goblin Slayer Egg", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "Goblin Slayer Egg"
+local A_2 = 1
+local A_3 = true
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.PurchaseEgg
+Event:FireServer(A_1, A_2, A_3)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Black Clover Egg", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "White Clover Egg"
+local A_2 = 1
+local A_3 = true
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.PurchaseEgg
+Event:FireServer(A_1, A_2, A_3)
+wait(.1)
+end
+end)
+Auto:Toggle("Buy Pradator X Egg", "",false, function(State)
+_G.autoyen = State
+while _G.autoyen do wait()
+local A_1 = "Predator X Egg"
+local A_2 = 1
+local A_3 = true
+local Event = game:GetService("ReplicatedStorage").Remotes.Events.PurchaseEgg
+Event:FireServer(A_1, A_2, A_3)
+wait(.1)
+end
+end)
+local tab2 = win:Tab("Misc", "http://www.roblox.com/asset/?id=6022668888")
+tab2:Button("Destroy GUI","",function()
+    game.CoreGui.FluxLib:Destroy()
+end)
+tab2:Slider("Walkspeed", "",0,500,16,function(t)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = t
+end)
+tab2:Slider("JumpPower", "",0,500,16,function(y)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = y
+end)
+tab2:Line()
+tab2:Button("Claim Chest","", function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1.76273012, 21.5110149, 1.13527524, -0.942810297, 3.33355317e-08, 0.333329827, 4.76923141e-08, 1, 3.48881777e-08, -0.333329827, 4.87902021e-08, -0.942810297)
+end)
+tab2:Button("Claim Chest Group","", function()
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(11.5710287, 21.5689735, -0.737591267, -0.731008351, -1.78509705e-08, -0.682368517, -4.9331689e-08, 1, 2.6687788e-08, 0.682368517, 5.31713873e-08, -0.731008351)
+end)
